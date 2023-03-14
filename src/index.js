@@ -40,6 +40,12 @@ const getMovie = async() =>{
 
 }
 
+const  countListItems = () => {
+    const count = commentlist.getElementsByTagName('li').length;
+    return count;
+}
+
+
 open.addEventListener('click', () => {
     document.querySelector('.comment-container').style.display = 'block';
     document.querySelector('.relative').style.display = 'none';
@@ -65,6 +71,8 @@ const getComments = async () => {
         commentlist.appendChild(comment);
         console.log('done');
     });
+    const commentNumber = countListItems();
+    document.querySelector('.commentcount').innerHTML = `(${commentNumber})`;
 
 }
 
