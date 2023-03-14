@@ -14,14 +14,15 @@
 }
 
 .div-details{
-    display: grid;
-    grid-template-columns: auto auto;
+    margin-left: 25%;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .div-flex{
     display: flex;
     gap: 10px;
-    margin-left: 35%;
 }
 
 .div-image-span{
@@ -38,23 +39,23 @@ form{
     flex-direction: column;
     width: 350px;
     gap: 30px;
+    margin-left: 25%;
 }
 
 .div-form-comments{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+.div-form-comments h2{
+    text-align: center;
 }
 
 .div-comments{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .ul-comments{
     list-style: none;
     padding: 0;
+    margin-left: 25%;
 }
 
 .comment-submit{
@@ -76,4 +77,14 @@ input{
 
 .div-comment-head{
     display: flex;
+    justify-content: center;
+}
+
+.column {
+    flex-basis: 50%;
+    box-sizing: border-box;
+}
+
+.padding--left{
+    padding-left: 15%;   
 }

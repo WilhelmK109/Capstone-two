@@ -19,10 +19,11 @@ const movielanguage = document.querySelector('.language');
 const moviepremier = document.querySelector('.premier');
 const movieend = document.querySelector('.end');
 const moviestatus = document.querySelector('.status');
+const item = "45";
 
 
 const getMovie = async() =>{
-    const url = `${baseMovieurl}${movieID[1]}`;
+    const url = `${baseMovieurl}${movieID[0]}`;
     const response = await fetch(url)
     const data =  await response.json();
     console.log(data);
@@ -58,7 +59,7 @@ close.addEventListener('click',()=>{
 });
 
 const getComments = async () => {
-    const url = `${baseUrl}${appID}/comments?item_id=item1`;
+    const url = `${baseUrl}${appID}/comments?item_id=${item}`;
     console.log(url);
 
     const response = await fetch(url);
@@ -113,8 +114,9 @@ submit.addEventListener('click',(e) => {
   const insight = textarea.value;  
     console.log(commentername)
     console.log(insight)
+    
     const comment = {
-        "item_id": "item1",
+        "item_id": item,
         "username": commentername,
         "comment": insight
     }
