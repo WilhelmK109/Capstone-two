@@ -53,3 +53,12 @@ form{
     list-style: none;
     padding: 0;
 }
+
+.comment-submit{
+    width: 90px;
+    height: 30px;
+}
+
+input{
+    height: 30px;
+}
