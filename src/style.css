@@ -1,4 +1,5 @@
 .comment-container{
+    display: none;
     border: 3px   solid black;
     padding-top: 20px; 
 }
@@ -61,4 +62,10 @@ form{
 
 input{
     height: 30px;
+}
+
+.button-close{
+    border: none;
+    background-color: white;
+    display: flex;
 }
