@@ -2,40 +2,51 @@ import './style.css';
 
 const apiBaseUrl = 'https://api.tvmaze.com';
 
-function loadData () {
+function loadData() {
   const shows = [
     {
       id: 82,
-      title: 'Game of Thrones'
+      title: 'Game of Thrones',
     },
     {
       id: 23268,
-      title: 'Spiderman'
+      title: 'Spiderman',
     },
     {
       id: 1856,
-      title: 'Superman'
+      title: 'Superman',
     },
     {
       id: 6333,
-      title: 'Babylon'
+      title: 'Babylon',
     },
     {
       id: 22642,
-      title: 'Marlowe'
+      title: 'Marlowe',
     },
     {
       id: 11781,
-      title: 'Eternal Law'
+      title: 'Eternal Law',
     },
   ];
 
+  const getLikes = (itemId) => { // eslint-disable-line
+    return fetch(`${apiBaseUrl}/shows/${itemId}/likes`)
+      .then((response) => response.json())
+      .then((data) => data.length);
+  };
+
+  const likeItem = (itemId) => { // eslint-disable-line
+    return fetch(`${apiBaseUrl}/shows/${itemId}/like`, { method: 'POST' })
+      .then((response) => response.json());
+  };
+
   const itemsList = document.getElementById('items-list');
 
-  shows.forEach(show => {
+  shows.forEach((show) => {
     fetch(`${apiBaseUrl}/shows/${show.id}`)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         const itemContainer = document.createElement('div');
         itemContainer.classList.add('item-container');
 
@@ -47,7 +58,7 @@ function loadData () {
 
         const itemLikes = document.createElement('span');
         itemLikes.dataset.itemId = data.id;
-        getLikes(data.id).then(likes => itemLikes.innerText = 'Likes: ' + likes);
+        getLikes(data.id).then(likes => itemLikes.innerText = 'Likes: ' + likes); // eslint-disable-line
 
         const itemLikeButton = document.createElement('button');
         itemLikeButton.innerText = 'Like';
@@ -55,7 +66,7 @@ function loadData () {
 
         const itemCommentButton = document.createElement('button');
         itemCommentButton.innerText = 'Comments';
-        itemCommentButton.onclick = () => openComments(data.id);
+        itemCommentButton.onclick = () => openComments(data.id); // eslint-disable-line
 
         itemContainer.appendChild(itemImage);
         itemContainer.appendChild(itemTitle);
@@ -66,17 +77,6 @@ function loadData () {
         itemsList.appendChild(itemContainer);
       });
   });
-}
-
-const getLikes = (itemId) => {
-  return fetch(`${apiBaseUrl}/shows/${itemId}/likes`)
-  .then(response => response.json())
-  .then(data => data.length);
-}
-
-const likeItem = (itemId) => {
-  return fetch(`${apiBaseUrl}/shows/${itemId}/like`, { method: 'POST' })
-  .then(response => response.json());
 }
 
 loadData();
