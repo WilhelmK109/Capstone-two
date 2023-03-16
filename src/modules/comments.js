@@ -23,12 +23,6 @@ export const getMovie = async () => {
   const url = `${baseMovieurl}${movieID[0]}`;
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data);
-  console.log(data.name);
-  console.log(data.language);
-  console.log(data.premiered);
-  console.log(data.ended);
-  console.log(data.status);
   movieImage.src = data.image.medium;
   movietitle.innerText = data.name;
   movielanguage.innerText = data.language;
@@ -44,17 +38,13 @@ const countListItems = () => {
 
 export const getComments = async () => {
   const url = `${baseUrl}${appID}/comments?item_id=${item}`;
-  console.log(url);
-
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data);
   commentlist.innerHTML = '';
   data.forEach((element) => {
     const comment = document.createElement('li');
     comment.textContent = `${element.creation_date}: ${element.username}  ${element.comment}`;
     commentlist.appendChild(comment);
-    console.log('done');
   });
   const commentNumber = countListItems();
   document.querySelector('.commentcount').innerHTML = `(${commentNumber})`;
@@ -62,34 +52,20 @@ export const getComments = async () => {
 
 const postComments = async (comment) => {
   const url = `${baseUrl}${appID}/comments`;
-  console.log(url);
-  console.log(comment);
 
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(comment),
-    });
-    if (response.status === 201) {
-      console.log('Comment created successfully!');
-      getComments();
-    } else {
-      console.error('Error creating comment:', response.statusText);
-    }
-  } catch (error) {
-    console.error('Error creating comment:', error);
-  }
+  await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(comment),
+  });
+  getComments();
 };
 
 export const submitComment = () => {
   const commentername = input.value;
   const insight = textarea.value;
-  console.log(commentername);
-  console.log(insight);
-
   const comment = {
     item_id: item,
     username: commentername,
