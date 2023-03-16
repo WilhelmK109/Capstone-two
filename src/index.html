@@ -12,13 +12,24 @@
 
 <body>
 
-<div class="relative">
-    This div element has position: relative;
-    <button class="open-comments">comment</button>
-</div>
-
+<header>
+    <nav class="nav-bar">
+        <a id="logo" href="">A-Mov<br>logo</a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Ranks</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div id="items-list"></div>
+    <div class="relative">
+        This div element has position: relative;
+        <button class="open-comments">comment</button>
+    </div>
     <div class="comment-container">
-
+    
         <div class="div-image-span">
             <div class="div-image">
                 <img class="movieImage" src="" alt="Image Title">
@@ -26,7 +37,7 @@
             </div>
             <button class="button-close"><span class="material-symbols-outlined close">close</span></button>
         </div>
-
+    
         <div class="div-details">
             <div class="div-language div-flex column">
                 <p>Language:</p>
@@ -45,7 +56,7 @@
                 <p class="end"></p>
             </div>
         </div>
-
+    
         <div class="div-comments">
             <div class="div-comment-head">
                 <h2>Comments</h2>
@@ -54,7 +65,7 @@
             <ul class="ul-comments">
             </ul>
         </div>
-
+    
         <div class="div-form-comments">
             <h2>Add a comment</h2>
             <form action="" method="post">
@@ -64,10 +75,10 @@
             </form>
         </div>
     </div>
-
-
-    
-
+</main>
+<footer>
+    <p>Created by Wilhelm & Isaac under MIT license</p>
+</footer>    
 </body>
 
 </html>
