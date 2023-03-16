@@ -3,6 +3,11 @@
   font-family: sans-serif;
 }
 
+button,
+.material-symbols-outlined {
+  cursor: pointer;
+}
+
 body {
   overflow-x: hidden;
   display: flex;
@@ -41,6 +46,10 @@ header {
   display: block;
 }
 
+#item-count {
+  margin-left: 5px;
+}
+
 #logo {
   font-style: normal;
   font-size: 14px;
@@ -62,10 +71,30 @@ header {
   margin-bottom: 50px;
 }
 
+.item-container {
+  display: flex;
+  flex-direction: column;
+  width: 138px;
+}
+
 .item-container img {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   margin-top: 20px;
+}
+
+.item-container p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.comment-btn {
+  width: 120px;
+  height: auto;
 }
 
 footer {

@@ -6,9 +6,7 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "dev": "webpack --mode development",
     "build": "webpack",
-    "server": "node server.js",
     "start": "webpack serve --open"
   },
   "repository": {
@@ -40,7 +38,5 @@
     "webpack": "^5.76.1",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
-  },
-  "mode": "development",
-  "description": ""
+  }
 }
