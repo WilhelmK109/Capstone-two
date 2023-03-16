@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { getLikes, postLikes } from './modules/interaction.js';
 import './style.css';
 
@@ -25,7 +24,9 @@ function loadData() {
         const itemLikes = document.createElement('span');
         itemLikes.classList.add('align-self-end');
         itemLikes.dataset.itemId = data.id;
-        getLikes(data.id).then((likes => itemLikes.innerText = likes + ' Likes'));
+        getLikes(data.id).then((likes) => {
+          itemLikes.innerText = `${likes} Likes`;
+        });
 
         const itemLikeButton = document.createElement('span');
         itemLikeButton.className = 'material-symbols-outlined';
@@ -36,7 +37,7 @@ function loadData() {
               getLikes(data.id).then((likes) => {
                 itemLikes.innerText = `Likes: ${likes}`;
               });
-          });
+            });
         };
 
         const itemCommentButton = document.createElement('button');
@@ -56,7 +57,7 @@ function loadData() {
   function updateItemCount() {
     const itemCount = document.getElementById('item-count');
     const count = shows.length;
-    itemCount.innerText = `${count}`;
+    itemCount.innerText = `(${count})`;
   }
   updateItemCount();
 }
