@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import countListItems from './countList.js';
+import { countListItems } from '../src/modules/comments.js';
 
 test('countListItems', () => {
   document.body.innerHTML = `

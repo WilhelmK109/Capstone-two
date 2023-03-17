@@ -24,3 +24,11 @@ export const postLikes = async (itemId) => {
     }),
   });
 };
+
+export const updateItemCount = (shows) => {
+  const itemCount = document.getElementById('item-count');
+  const count = shows.length;
+  if (itemCount) {
+    itemCount.innerText = `(${count})`;
+  }
+};
