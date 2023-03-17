@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import countListItems from './tester.js';
+import countListItems from './countList.js';
 
 test('countListItems', () => {
   document.body.innerHTML = `
