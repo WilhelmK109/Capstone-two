@@ -9,7 +9,6 @@ const commentlist = document.querySelector('.ul-comments');
 const baseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 const baseMovieurl = 'https://api.tvmaze.com/shows/';
 const appID = 'lTv8vDU2N67DXwMylvoz';
-const movieID = ['82', '1611', '7073', '546', '22642', '13121'];
 
 const movieImage = document.querySelector('.movieImage');
 const movietitle = document.querySelector('.title');
@@ -17,12 +16,18 @@ const movielanguage = document.querySelector('.language');
 const moviepremier = document.querySelector('.premier');
 const movieend = document.querySelector('.end');
 const moviestatus = document.querySelector('.status');
-const item = '45';
+const id1 = document.querySelector('.id1');
 
-export const getMovie = async () => {
-  const url = `${baseMovieurl}${movieID[0]}`;
+const countListItems = () => {
+  const count = commentlist.getElementsByTagName('li').length;
+  return count;
+};
+
+export const getMovie = async (id) => {
+  const url = `${baseMovieurl}${id}`;
   const response = await fetch(url);
   const data = await response.json();
+  id1.innerText = id;
   movieImage.src = data.image.medium;
   movietitle.innerText = data.name;
   movielanguage.innerText = data.language;
@@ -31,13 +36,8 @@ export const getMovie = async () => {
   moviestatus.innerText = data.status;
 };
 
-const countListItems = () => {
-  const count = commentlist.getElementsByTagName('li').length;
-  return count;
-};
-
-export const getComments = async () => {
-  const url = `${baseUrl}${appID}/comments?item_id=${item}`;
+export const getComments = async (id2) => {
+  const url = `${baseUrl}${appID}/comments?item_id=${id2}`;
   const response = await fetch(url);
   const data = await response.json();
   commentlist.innerHTML = '';
@@ -50,6 +50,14 @@ export const getComments = async () => {
   document.querySelector('.commentcount').innerHTML = `(${commentNumber})`;
 };
 
+export const openComments = (id) => {
+  document.querySelector('.comment-container').style.display = 'block';
+  document.querySelector('#items-list').style.display = 'none';
+  document.querySelector('body').style.display = 'block';
+  getMovie(id);
+  getComments(id);
+};
+
 const postComments = async (comment) => {
   const url = `${baseUrl}${appID}/comments`;
 
@@ -60,12 +68,13 @@ const postComments = async (comment) => {
     },
     body: JSON.stringify(comment),
   });
-  getComments();
+  getComments(comment.item_id);
 };
 
 export const submitComment = () => {
   const commentername = input.value;
   const insight = textarea.value;
+  const item = id1.innerText;
   const comment = {
     item_id: item,
     username: commentername,
