@@ -2,7 +2,7 @@
 * @jest-environment jsdom
 */
 // Import the updateItemCount function
-import updateItemCount from './tester.js';
+import updateItemCount from './countItem.js';
 
 describe('updateItemCount', () => {
   document.body.innerHTML = `

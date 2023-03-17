@@ -105,11 +105,17 @@ footer {
   margin-top: auto;
 }
 
+.padding--left {
+  padding-left: 15%;
+}
+
 .comment-container {
   display: none;
-  border: 3px   solid black;
+  border: 3px solid black;
   padding-top: 20px;
   padding-bottom: 20px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .div-image {
@@ -173,7 +179,7 @@ input {
   background-color: white;
   display: flex;
   position: absolute;
-  right: 2%;
+  right: 5%;
 }
 
 .div-comment-head {
@@ -186,6 +192,6 @@ input {
   box-sizing: border-box;
 }
 
-.padding--left {
-  padding-left: 15%;
+.id1 {
+  display: none;
 }
