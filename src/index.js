@@ -1,6 +1,6 @@
 import { getLikes, postLikes } from './modules/interaction.js';
 import {
-  getComments, input, submitComment, textarea, close, submit, openComments,
+  input, submitComment, textarea, close, submit, openComments,
 } from './modules/comments.js';
 import './style.css';
 
@@ -38,7 +38,7 @@ function loadData() {
           postLikes(data.id)
             .then(() => {
               getLikes(data.id).then((likes) => {
-                itemLikes.innerText = `Likes: ${likes}`;
+                itemLikes.innerText = `${likes} Likes`;
               });
             });
         };
@@ -74,8 +74,6 @@ close.addEventListener('click', () => {
   document.querySelector('#items-list').style.display = 'grid';
   document.querySelector('body').style.display = 'flex';
 });
-
-getComments();
 
 submit.addEventListener('click', (e) => {
   e.preventDefault();
