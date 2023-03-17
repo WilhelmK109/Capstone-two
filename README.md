@@ -137,6 +137,17 @@ npm test
 
 
 
+## 🔭 Future Features <a name="future-features"></a>
+
+
+
+- **[responsiveness]**-> Make the webpage more responsive.
+
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## 🤝 Contributing <a name="contributing"></a>
 
