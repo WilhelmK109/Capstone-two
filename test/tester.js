@@ -1,4 +1,5 @@
-const updateItemCount = async (shows) => {
+
+export const updateItemCount = async (shows) => {
   const itemCount = document.getElementById('item-count');
   const count = shows.length;
   if (itemCount) {
@@ -6,4 +7,8 @@ const updateItemCount = async (shows) => {
   }
 };
 
-export default updateItemCount;
+export const countListItems = (commentlist) => {
+  const count = commentlist.getElementsByTagName('li').length;
+  return count;
+};
+

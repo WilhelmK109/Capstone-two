@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   font-family: sans-serif;
@@ -102,4 +103,89 @@ footer {
   width: 100%;
   padding: 1em;
   margin-top: auto;
+  }
+  
+.comment-container {
+  display: none;
+  border: 3px   solid black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.div-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.div-details {
+  margin-left: 25%;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.div-flex {
+  display: flex;
+  gap: 10px;
+}
+
+.div-image-span {
+  display: flex;
+}
+
+.close {
+  font-size: 75px;
+  font-weight: bolder;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  gap: 30px;
+  margin-left: 25%;
+}
+
+.div-form-comments h2 {
+  text-align: center;
+}
+
+.ul-comments {
+  list-style: none;
+  padding: 0;
+  margin-left: 25%;
+}
+
+.comment-submit {
+  width: 90px;
+  height: 30px;
+}
+
+input {
+  height: 30px;
+}
+
+.button-close {
+  border: none;
+  background-color: white;
+  display: flex;
+  position: absolute;
+  right: 2%;
+}
+
+.div-comment-head {
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  flex-basis: 50%;
+  box-sizing: border-box;
+}
+
+.padding--left {
+  padding-left: 15%;
 }

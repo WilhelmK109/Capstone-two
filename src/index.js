@@ -1,4 +1,8 @@
+
 import { getLikes, postLikes } from './modules/interaction.js';
+import {
+  getComments, input, submitComment, textarea, close, submit,
+} from './modules/comments.js';
 import './style.css';
 
 const apiBaseUrl = 'https://api.tvmaze.com';
@@ -43,7 +47,7 @@ function loadData() {
         const itemCommentButton = document.createElement('button');
         itemCommentButton.classList.add('comment-btn');
         itemCommentButton.innerText = 'Comments';
-        itemCommentButton.onclick = () => openComments(data.id); // eslint-disable-line
+        itemCommentButton.onclick = () => openComments(data.id); 
 
         itemContainer.appendChild(itemImage);
         itemContainer.appendChild(itemTitle);
@@ -65,3 +69,18 @@ function loadData() {
 }
 
 loadData();
+
+close.addEventListener('click', () => {
+  document.querySelector('.comment-container').style.display = 'none';
+  document.querySelector('#items-list').style.display = 'grid';
+  document.querySelector('body').style.display = 'flex';
+});
+
+getComments();
+
+submit.addEventListener('click', (e) => {
+  e.preventDefault();
+  submitComment();
+  input.value = '';
+  textarea.value = '';
+});
