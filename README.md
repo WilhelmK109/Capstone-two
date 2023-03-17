@@ -38,7 +38,7 @@
 
 
 **[Amazing movies]** is a website that displays movies and allows people to comment and like them.<br>
-A [loom video](https://www.loom.com/share/818e4b9451e240b29157082df20925e8) description of my project.
+A [video](https://drive.google.com/file/d/1Bqy-7lI8FlR2BpMVnnOxnO-6Gp-BHTtE/view?usp=share_link) description of my project.
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
