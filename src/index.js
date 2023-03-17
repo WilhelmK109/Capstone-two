@@ -9,7 +9,7 @@ close.addEventListener('click', () => {
   document.querySelector('body').style.display = 'flex';
 });
 
-// getComments();
+getComments();
 
 submit.addEventListener('click', (e) => {
   e.preventDefault();
