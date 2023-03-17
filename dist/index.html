@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Amazing Movies</title>
+<script defer src="runtime.js"></script><script defer src="main.js"></script></head>
+<body>
+<header>
+    <nav class="nav-bar">
+        <a id="logo" href="">A-Mov<br>logo</a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Ranks</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div id="items-list"></div>
+    <div class="comment-container">
+    
+        <div class="div-image-span">
+            <div class="div-image">
+                <img class="movieImage" src="" alt="Image Title">
+                <h2 class="title"></h2>
+            </div>
+            <button type="submit" class="button-close"><span class="material-symbols-outlined close">close</span></button>
+        </div>
+    
+        <div class="div-details">
+            <div class="div-language div-flex column">
+                <p>Language:</p>
+                <p class="language"></p>
+            </div>
+            <div class="div-status div-flex column padding--left">
+                <p>Status:</p>
+                <p class="status"></p>
+            </div>
+            <div class="div-premiered div-flex column">
+                <p>Premiered:</p>
+                <p class="premier"></p>
+            </div>
+            <div class="div-ended div-flex column padding--left">
+                <p>Ended:</p>
+                <p class="end"></p>
+            </div>
+        </div>
+    
+        <div class="div-comments">
+            <div class="div-comment-head">
+                <h2>Comments</h2>
+                <h2 class="commentcount"></h2>
+            </div>
+            <ul class="ul-comments">
+            </ul>
+        </div>
+    
+        <div class="div-form-comments">
+            <h2>Add a comment</h2>
+            <form action="" method="post">
+                <input type="text" name="" id="" placeholder="Your name">
+                <textarea name="message" rows="10" cols="30" placeholder="Your Insights"></textarea>
+                <button type="submit" class="comment-submit">Comment</button>
+            </form>
+        </div>
+    </div>
+</main>
+<footer>
+    <p>Created by Wilhelm & Isaac under MIT license</p>
+</footer>    
+</body>
+</html>
