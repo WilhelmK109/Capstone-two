@@ -1,4 +1,4 @@
-import { getLikes, postLikes } from './modules/interaction.js';
+import { getLikes, postLikes, updateItemCount } from './modules/interaction.js';
 import {
   input, submitComment, textarea, close, submit, openComments,
 } from './modules/comments.js';
@@ -6,7 +6,7 @@ import './style.css';
 
 const apiBaseUrl = 'https://api.tvmaze.com';
 
-function loadData() {
+const loadData = () => {
   const shows = [82, 1611, 7073, 546, 22642, 13121];
 
   const itemsList = document.getElementById('items-list');
@@ -57,15 +57,9 @@ function loadData() {
         itemsList.appendChild(itemContainer);
       });
   });
-  const updateItemCount = () => {
-    const itemCount = document.getElementById('item-count');
-    const count = shows.length;
-    if (itemCount) {
-      itemCount.innerText = `(${count})`;
-    }
-  };
-  updateItemCount();
-}
+
+  updateItemCount(shows);
+};
 
 loadData();
 

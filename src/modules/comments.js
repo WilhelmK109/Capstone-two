@@ -17,7 +17,7 @@ const movieend = document.querySelector('.end');
 const moviestatus = document.querySelector('.status');
 const id1 = document.querySelector('.id1');
 
-const countListItems = () => {
+export const countListItems = (commentlist) => {
   const count = commentlist.getElementsByTagName('li').length;
   return count;
 };
@@ -45,7 +45,7 @@ export const getComments = async (id2) => {
     comment.textContent = `${element.creation_date}: ${element.username}  ${element.comment}`;
     commentlist.appendChild(comment);
   });
-  const commentNumber = countListItems();
+  const commentNumber = countListItems(commentlist);
   document.querySelector('.commentcount').innerHTML = `(${commentNumber})`;
 };
 
