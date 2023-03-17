@@ -1,7 +1,6 @@
-
 import { getLikes, postLikes } from './modules/interaction.js';
 import {
-  getComments, input, submitComment, textarea, close, submit,
+  getComments, input, submitComment, textarea, close, submit, openComments,
 } from './modules/comments.js';
 import './style.css';
 
@@ -47,7 +46,7 @@ function loadData() {
         const itemCommentButton = document.createElement('button');
         itemCommentButton.classList.add('comment-btn');
         itemCommentButton.innerText = 'Comments';
-        itemCommentButton.onclick = () => openComments(data.id); 
+        itemCommentButton.onclick = () => openComments(data.id);
 
         itemContainer.appendChild(itemImage);
         itemContainer.appendChild(itemTitle);
