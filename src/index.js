@@ -54,11 +54,13 @@ function loadData() {
         itemsList.appendChild(itemContainer);
       });
   });
-  function updateItemCount() {
+  const updateItemCount = () => {
     const itemCount = document.getElementById('item-count');
     const count = shows.length;
-    itemCount.innerText = `(${count})`;
-  }
+    if (itemCount) {
+      itemCount.innerText = `(${count})`;
+    }
+  };
   updateItemCount();
 }
 
