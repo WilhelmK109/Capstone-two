@@ -1,5 +1,4 @@
 export const close = document.querySelector('.button-close');
-export const open = document.querySelector('.open-comments');
 export const submit = document.querySelector('.comment-submit');
 
 export const input = document.querySelector('input');
